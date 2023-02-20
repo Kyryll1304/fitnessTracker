@@ -4,16 +4,16 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class FitnessTracker {
-    private String firstName;
+    private final String firstName;
     private String lastName;
     private int weight;
-    private String email;
-    private String phone;
+    private final String email;
+    private final String phone;
     private int steps;
-    private int age;
+    private final int age;
     private int systolicPressure;
 
-    private LocalDate dateOfBirth;
+    private final LocalDate dateOfBirth;
 
     // Конструктор класу
     public FitnessTracker(String firstName, String lastName, int weight, String email, String phone, int steps, int systolicPressure, int day, int month, int year) {
@@ -63,6 +63,18 @@ public class FitnessTracker {
         return age;
     }
 
+    public int getDayOfBirth() {
+        return dateOfBirth.getDayOfMonth();
+    }
+
+    public int getMonthOfBirth() {
+        return dateOfBirth.getMonthValue();
+    }
+
+    public int getYearOfBirth() {
+        return dateOfBirth.getYear();
+    }
+
     // Сетери
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -75,6 +87,7 @@ public class FitnessTracker {
     public void setSteps(int steps) {
         this.steps = steps;
     }
+
 
     public void setSystolicPressure(int systolicPressure) {
         this.systolicPressure = systolicPressure;
